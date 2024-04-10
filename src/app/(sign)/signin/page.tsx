@@ -1,9 +1,9 @@
 'use client';
 import { useForm } from 'react-hook-form';
-import FormHeader from '@/components/form/FormHeader';
+import classes from './page.module.css';
+import Logo from '@/assets/svgs/linkbrary.svg';
+import Link from 'next/link';
 import CommonInput from '@/components/form/CommonInput';
-
-import React from 'react';
 
 interface FormData {
   email: string;
@@ -24,7 +24,14 @@ const SignInPage = () => {
 
   return (
     <>
-      <FormHeader />
+      <header className={classes.layout}>
+        <Link href='/'>
+          <Logo width={210} height={38} />
+        </Link>
+        <p className={classes.subtitle}>
+          회원이 아니신가요?<Link href='/signup'>회원 가입하기</Link>
+        </p>
+      </header>
       <form onSubmit={handleSubmit(onSubmit)}>
         <CommonInput
           type='text'

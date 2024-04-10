@@ -5,7 +5,6 @@ module.exports = {
   },
   images: {
     remotePatterns: [
-      { hostname: 'cityfood.co.kr' },
       {
         protocol: 'https',
         hostname: '*',
@@ -13,5 +12,13 @@ module.exports = {
         pathname: '/**',
       },
     ],
+  },
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
+
+    return config;
   },
 };

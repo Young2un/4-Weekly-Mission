@@ -3,7 +3,7 @@ import classes from './Header.module.css';
 import logo from '../assets/svgs/linkbrary.svg';
 import instance from '@/lib/instance';
 import Link from 'next/link';
-import { SampleUser } from '@/type/Sample';
+import { SampleUser } from '@/types/sample';
 
 const Header = async () => {
   const { data } = await instance.get('/sample/user');
